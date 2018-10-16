@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.daqri.cubesample"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+             multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+//    implementation ('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
+//        exclude module: 'support-v4'
+//    }
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':ArJpctBaseLib')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+//    implementation files('src/main/libs/jpct_ae.jar')
+}

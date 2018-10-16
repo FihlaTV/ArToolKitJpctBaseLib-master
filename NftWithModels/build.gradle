@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.daqri.nftwithmodels"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+//    implementation ('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
+//        exclude module: 'support-v4'
+//    }
+//    configurations {
+//        all*.exclude group: 'com.android.support', module: 'support-v13'
+//    }
+    implementation project(':ArJpctBaseLib')
+    implementation 'com.android.support:multidex:1.0.3'
+//    implementation files('src/libs/jpct_ae.jar')
+}
